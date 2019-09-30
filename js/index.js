@@ -39,6 +39,10 @@ const siteContent = {
   },
   footer: {
     copyright: "Copyright Great Idea! 2018"
+  },
+  button: {
+    headingOne: "Changed the heading with the click of a button",
+    headingTwo: "Changed the heading again!"
   }
 };
 
@@ -75,6 +79,14 @@ bannerHeader.textContent = siteContent.cta.h1;
 
 const bannerBtn = document.querySelector(".cta-text button");
 bannerBtn.textContent = siteContent.cta.button;
+
+bannerBtn.addEventListener("mousedown", e => {
+  bannerHeader.textContent = siteContent.button.headingOne;
+});
+bannerBtn.addEventListener("mouseup", e => {
+  bannerHeader.textContent = siteContent.button.headingTwo;
+});
+
 const bannerImg = document.getElementById("cta-img");
 bannerImg.src = siteContent.cta["img-src"];
 //!banner
